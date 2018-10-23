@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 // @CHILD CLASSES
@@ -34,7 +34,8 @@ class Table extends Component {
                 delete array[i];
             }
 
-        };
+        }
+        ;
 
         this.setState({
             myUserList: array
@@ -64,16 +65,17 @@ class Table extends Component {
 
     render() {
         console.log(this.state.activeRowID)
-        const { data } = this.props;
+        const {data} = this.props;
         const headerColumnNames = this.state.myUserList.length > 0 ? Object.keys(this.state.myUserList[0]) : [];
         headerColumnNames.unshift('checkbox');
         const activeColumns = ['checkbox', 'id', 'title'];
         return (
             <div>
                 <button
-                    style={{ display: this.state.activeRowID.length > 1 ? "block" : "none"}}
+                    style={{display: this.state.activeRowID.length > 1 ? "block" : "none"}}
                     onClick={this.deleteFromTable}
-                >MULTIPLY DELETE</button>
+                >MULTIPLY DELETE
+                </button>
                 <table className="rwd-table">
                     <TableHeader
                         activeColumns={activeColumns}
